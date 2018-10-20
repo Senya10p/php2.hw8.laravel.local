@@ -21,8 +21,8 @@ class CreateTablePages extends Migration
             $table->timestamps();
         });
 
-        \DB::table('pages')->insert(['content' => 'Hello', 'alias' => 'index', 'title' => 'Заголовок1']);
-        \DB::table('pages')->insert(['content' => 'Hello! biography', 'alias' => 'biography', 'title' => 'Заголовок2']);
+        \DB::table('pages')->insert(['content' => 'Сайт посвящён писателю Виктору Пелевину', 'alias' => 'index', 'title' => 'Добро пожаловать!']);
+        \DB::table('pages')->insert(['content' => 'Виктор Олегович Пелевин родился 22 ноября 1962 года в Москве', 'alias' => 'biography', 'title' => 'Биография Виктора Пелевина']);
         \DB::table('pages')->insert(['content' => 'Hello! books', 'alias' => 'books', 'title' => 'Заголовок3']);
     }
 

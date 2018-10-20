@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
-        // \DB::table('users')->insert(['name' => 'sergey', 'email' => 'fuss-fuss-fuss@yandex.ru', 'password' => '$2y$10$tXz/VgIG46X.ta.3c1PvAOdooAlAUlbY06p5mcFCr08M5Si.uz.ma']);
+        \DB::table('users')->insert(['name' => 'sergey', 'email' => 'fuss-fuss-fuss@yandex.ru', 'password' => '$2y$10$tXz/VgIG46X.ta.3c1PvAOdooAlAUlbY06p5mcFCr08M5Si.uz.ma']);
     }
 
     /**

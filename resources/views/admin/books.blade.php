@@ -17,7 +17,7 @@
                 <label><h5>Книги</h5></label>
             </div>
             <table border="1">
-                <th>Книга</th><th>Год</th><th>Обложка книги</th><th>Выбрать обложку книги</th>
+                <th>Книга</th><th>Год</th><th>Обложка книги</th><th>Выбрать обложку книги</th><th>Жанр</th><th>Изменить жанр книги</th>
                 @foreach ($books as $book)
 
                     <tr>
@@ -27,6 +27,15 @@
                             <td><input type="text" name="year" value="{{old('book', $book->year)}}"></td>
                             <td><img src="{{ asset($book->img) }}" height="35px"></td>
                             <td><input name="img" type="file"></td>
+                            <td>{{ old('book', $book->category->name) }}</td>
+                            <td>
+                                <select name="category">
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </td>
+
                             <td><button class="btn-info shadow" type="submit" name="update" value="{{ $book->id }}">Изменить</button></td>
                         </form>
                         <td>
@@ -55,6 +64,12 @@
                 <p>
                     Книга: <input type="text" name="book">
                     Год: <input type="text" name="year">
+                    Жанр:
+                    <select name="category" >
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
                 </p>
                 <button type="submit" name="add">Добавить</button>
             </form>

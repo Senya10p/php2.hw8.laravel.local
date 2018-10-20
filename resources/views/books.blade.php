@@ -11,6 +11,7 @@
                 <td>
                     <div style="font-size: 50px"><h1 style="color: darkslategray;">Название: {{ $book->book }}</h1></div>
                     <div style="font-size: 50px"><h1 style="color: darkslategray;">Год публикации: {{ $book->year }}</h1></div>
+                    <div style="font-size: 50px"><h1 style="color: darkslategray;">Жанр: {{ $book->category->name }}</h1></div>
                 </td>
             </tr>
             @endforeach

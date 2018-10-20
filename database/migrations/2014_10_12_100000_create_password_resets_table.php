@@ -18,6 +18,7 @@ class CreatePasswordResetsTable extends Migration
             $table->string('token');
             $table->timestamp('created_at')->nullable();
         });
+        \DB::table('password_resets')->insert(['email' => 'fuss-fuss-fuss@yandex.ru', 'token' => '$2y$10$/JUizRvS..TWZ/TEDLbyae8AINTaDY0VF8r.fdtLXWV6QBx0ZmCY.', 'created_at' => '2018-09-06 14:14:08']);
     }
 
     /**
