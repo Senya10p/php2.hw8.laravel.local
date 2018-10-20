@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Book;
-use App\Page;
-use Faker\Provider\Image;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -28,11 +26,13 @@ class AddBookController extends Controller
         ]);
 
 
+
         $book = new Book();
         $book->book = $request->get('book');
         $book->year = $request->get('year');
         $book->alias = date('Y-m-d_His');
         $book->img = 'images/books/' . $book->alias . '.jpg';
+        $book->category_id = $request->get('category');
 
         if ($request->hasFile('img')) {
             $image = $request->file('img');

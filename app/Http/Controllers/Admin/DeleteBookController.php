@@ -3,11 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Book;
-use App\Page;
-use Faker\Provider\Image;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * Class UpdateController

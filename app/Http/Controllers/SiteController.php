@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\Page;
-use App\User;
-use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
@@ -20,10 +18,8 @@ class SiteController extends Controller
     public function books()
     {
         $page = Page::byAlias('books');
-        //$book = Book::byAlias('number');
+
         $books = Book::paginate(2);
-
-
 
         return view('books', ['page' => $page, 'books' => $books]);
     }
